@@ -4,7 +4,7 @@ import Tweet from './Tweet'
 class TweetList extends React.Component {
   static propTypes = {
     tweets: PropTypes.arrayOf(PropTypes.object),
-    fetchTweetsSuccess: PropTypes.func
+    fetchTweets: PropTypes.func
   }
 
   static defaultProps = {
@@ -12,12 +12,9 @@ class TweetList extends React.Component {
   }
 
   componentDidMount() {
-    const mockTweets = [
-      { id: 1, name: 'John Doe', username: 'jd', tweetText: `Hello it's me`, timestamp: 1234 },
-      { id: 2, name: 'StopFish MoonOTea', username: 'PC', tweetText: 'rou ja tum tarm sun yar', timestamp: 5678 }
-    ]
+    const mockUsername = 'zkancs'
 
-    this.props.fetchTweetsSuccess(mockTweets)
+    this.props.fetchTweets(mockUsername)
   }
 
   render() {
