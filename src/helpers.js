@@ -58,14 +58,14 @@ const follow = (username, followedUsername) => new Promise((resolve, reject) => 
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     mode: 'cors',
     body: JSON.stringify({
       username,
       followedUsername,
-      isFollowing: true,
-    }),
+      isFollowing: true
+    })
   })
   .then((response) => {
     if (!response.ok) {
@@ -85,14 +85,14 @@ const unfollow = (username, followedUsername) => new Promise((resolve, reject) =
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     mode: 'cors',
     body: JSON.stringify({
       username,
       followedUsername,
-      isFollowing: false,
-    }),
+      isFollowing: false
+    })
   })
   .then((response) => {
     if (!response.ok) {
@@ -111,5 +111,5 @@ export {
   fetchProfile,
   fetchFollowStatus,
   follow,
-  unfollow,
+  unfollow
 }

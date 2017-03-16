@@ -7,8 +7,8 @@ const App = () => (
   <Router>
     <MainLayout>
       <Switch>
-        <Route exact path="/" component={BodyContainer} />
-        <Route path="/:ownerUsername" component={BodyContainer} />
+        <Route exact path='/' component={BodyContainer} />
+        <Route path='/:ownerUsername' component={BodyContainer} />
       </Switch>
     </MainLayout>
   </Router>

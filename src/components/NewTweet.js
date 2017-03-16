@@ -4,7 +4,7 @@ class NewTweet extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      tweetText: '',
+      tweetText: ''
     }
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
@@ -13,7 +13,7 @@ class NewTweet extends Component {
 
   handleOnChange(event) {
     this.setState({
-      tweetText: event.target.value,
+      tweetText: event.target.value
     })
   }
 
@@ -27,31 +27,31 @@ class NewTweet extends Component {
   handleOnClick(event) {
     event.preventDefault()
     this.setState({
-      tweetText: '',
+      tweetText: ''
     })
   }
 
   render() {
     return (
-      <div className="new-tweet">
-        <form className="form-horizontal">
-          <div className="form-group">
-            <div className="tweet-text col-sm-10">
+      <div className='new-tweet'>
+        <form className='form-horizontal'>
+          <div className='form-group'>
+            <div className='tweet-text col-sm-10'>
               <input
-                type="text"
-                id="tweetText"
-                className="form-control"
+                type='text'
+                id='tweetText'
+                className='form-control'
                 placeholder="What's happening"
                 onChange={this.handleOnChange}
                 onKeyDown={this.handleKeyDown}
                 value={this.state.tweetText}
               />
             </div>
-            <div className="col-sm-2">
+            <div className='col-sm-2'>
               <input
-                type="button"
-                className="btn btn-default"
-                value="Tweet"
+                type='button'
+                className='btn btn-default'
+                value='Tweet'
                 onClick={this.handleOnClick}
               />
             </div>
@@ -64,7 +64,7 @@ class NewTweet extends Component {
 
 NewTweet.propTypes = {
   name: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired
 }
 
 export default NewTweet

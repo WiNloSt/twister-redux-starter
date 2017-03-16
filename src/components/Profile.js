@@ -14,7 +14,7 @@ const Profile = (props) => {
     />)
 
   return (
-    <div className="profile">
+    <div className='profile'>
       <ProfileHeader name={props.name} username={props.username} />
       <ProfileDetail
         numTweets={props.numTweets}
@@ -33,7 +33,7 @@ Profile.propTypes = {
   numFollowers: PropTypes.number.isRequired,
   numFollowings: PropTypes.number.isRequired,
   isFollowing: PropTypes.bool.isRequired,
-  isOwnProfile: PropTypes.bool.isRequired,
+  isOwnProfile: PropTypes.bool.isRequired
 }
 
 export default Profile
