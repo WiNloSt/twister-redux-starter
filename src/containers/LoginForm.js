@@ -4,11 +4,15 @@ import { push } from 'connected-react-router'
 import { connect } from 'react-redux'
 import { login } from '../actions'
 
-const LoginInput = props => (
-  <div className='form-group'>
-    <input {...props.input} {...props} />
-  </div>
-)
+const LoginInput = props => {
+  const { input, meta, ...actualProps } = props
+
+  return (
+    <div className='form-group'>
+      <input {...props.input} {...actualProps} />
+    </div>
+  )
+}
 
 class LoginForm extends React.Component {
   static propTypes = {

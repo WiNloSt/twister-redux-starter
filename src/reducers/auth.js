@@ -1,4 +1,4 @@
-import { AUTH_LOGIN_SUCCESS } from '../actions/types'
+import { AUTH_LOGIN_SUCCESS, AUTH_LOGOUT } from '../actions/types'
 
 const initialState = {
   name: '',
@@ -15,6 +15,9 @@ const authReducer = (state = initialState, action) => {
         username,
         token
       }
+    }
+    case AUTH_LOGOUT: {
+      return initialState
     }
     default: return state
   }

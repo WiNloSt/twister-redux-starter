@@ -1,5 +1,5 @@
 import { push } from 'connected-react-router'
-import { AUTH_LOGIN_SUCCESS } from './types'
+import { AUTH_LOGIN_SUCCESS, AUTH_LOGOUT } from './types'
 import config from '../config'
 
 
@@ -70,3 +70,7 @@ export const signUp = ({username, name, email, password}) => dispatch => {
     .then(() => dispatch(push('/login')))
     .catch(console.error)
 }
+
+export const logout = () => ({
+  type: AUTH_LOGOUT
+})
