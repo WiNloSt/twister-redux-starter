@@ -28,11 +28,21 @@ const store = createStore(
   )
 )
 
-store.subscribe(() => {
-  saveState({
-    auth: store.getState().auth
-  })
-})
+const createAuthSavingHandler = () => {
+  let previousAuth = {}
+
+  return () => {
+    const auth = store.getState().auth
+    if (auth !== previousAuth) {
+      saveState({
+        auth
+      })
+      previousAuth = auth
+    }
+  }
+}
+
+store.subscribe(createAuthSavingHandler())
 
 const render = (Component) => {
   ReactDOM.render(
