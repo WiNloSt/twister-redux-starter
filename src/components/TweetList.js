@@ -4,7 +4,8 @@ import Tweet from './Tweet'
 class TweetList extends React.Component {
   static propTypes = {
     tweets: PropTypes.arrayOf(PropTypes.object),
-    fetchTweets: PropTypes.func
+    fetchTweets: PropTypes.func,
+    pageUsername: PropTypes.string
   }
 
   static defaultProps = {
@@ -12,9 +13,17 @@ class TweetList extends React.Component {
   }
 
   componentDidMount() {
-    const mockUsername = 'zkancs'
+    const pageUsername = this.props.pageUsername || 'zkancs'
 
-    this.props.fetchTweets(mockUsername)
+    this.props.fetchTweets(pageUsername)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.pageUsername === this.props.pageUsername) return
+
+    const pageUsername = nextProps.pageUsername || 'zkancs'
+
+    this.props.fetchTweets(pageUsername)
   }
 
   render() {
