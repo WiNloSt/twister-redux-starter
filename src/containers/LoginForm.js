@@ -33,7 +33,6 @@ class LoginForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('token naja', nextProps.token)
     if (nextProps.token) {
       this.props.redirect('/')
     }
